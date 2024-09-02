@@ -1,0 +1,12 @@
+#!/usr/bin/gnuplot
+set term post font 'Helvatica, 15'
+set xlabel 'SIZE OF ARRAY'
+set ylabel 'Execution Time in ms'
+set key right top
+set logscale y 
+set style data linespoints
+set title "Comparison of all sorting algorithms"
+set term post enh color eps
+set output 'comparison_graph.eps'
+#set autoscale x
+plot "bubble_avg_case.txt" lw 2 title 'bubble sort',"merge_avg_case.txt" lw 2 title 'merge sort',"insertion_worst_case.txt" lw 2 title 'insertion sort',"heap_avg_case.txt" lw 2 title 'heap sort',"quick_worst_case.txt" lw 2 title 'quick sort',"radix_worst_case.txt" lw 2 title 'radix sort' 
